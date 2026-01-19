@@ -1,0 +1,10 @@
+#
+# INVERSIÓN PUBLICA
+#
+git init
+git add .
+git commit -m "v.1.2.0 | 19/01/2026 12:30"
+
+git branch -M main
+git remote add origin https://github.com/luisamos/MEF-PCM.git
+git push -u origin main

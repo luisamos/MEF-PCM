@@ -1,0 +1,11 @@
+beautifulsoup4
+certifi
+charset-normalizer
+idna
+lxml
+psycopg2
+requests
+soupsieve
+urllib3
+tqdm
+playwright
