@@ -17,7 +17,7 @@ def procesarURL(ubigeo, gasto, ap, a, conexion):
 
 	if not htmlTabla:
 		return
-	htmlTabla2 = htmlTabla.findAll('td')
+	htmlTabla2 = htmlTabla.find_all('td')
 
 	columnas = 10
 	filaActual = []

@@ -30,7 +30,7 @@ for pliego in pliegos:
                 logError(f"No se encontró la tabla para el pliego {pliego}, gasto {gasto}, ap {ap}: {url}")
                 continue
 
-            htmlTabla2 = htmlTabla.findAll('td')
+            htmlTabla2 = htmlTabla.find_all('td')
             if not htmlTabla2:
                 logError(f"No se encontró el td para el pliego {pliego}, gasto {gasto}, ap {ap}: {url}")
                 continue

@@ -31,7 +31,7 @@ def procesarURL(ubigeo, gasto, ap, a, distrito, conexion):
 		logError(f"No se encontró la tabla MEF('{ubigeo}', '{gasto}', '{ap}', '{a}', '{distrito}'): {url}")
 		return
 
-	htmlTabla2 = htmlTabla.findAll('td')
+	htmlTabla2 = htmlTabla.find_all('td')
 
 	columnas = 10
 	filaActual = []

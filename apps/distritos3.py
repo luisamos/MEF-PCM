@@ -10,8 +10,8 @@ import inspect
 urlMEF = 'https://apps5.mineco.gob.pe/transparencia/Navegador/Navegar_7.aspx'
 parametros = {
         'host': 'localhost',
-        'database': 'geoperu',
-        'port': '5433',
+        'database': 'geoidep',
+        'port': '5432',
         'user': 'postgres',
         'password': '123456',
         'options': '-c client_encoding=utf8'
@@ -28,11 +28,11 @@ def FechaHoraActual():
     fechaHora = datetime.fromtimestamp(horaActual)
     return fechaHora.strftime('%d/%m/%Y %H:%M')
 
-def logCustom(mensaje, archivo='./logs/customDistritos.log'):
+def logCustom(mensaje, archivo='./apps/logs/customDistritos.log'):
 	with open(archivo, 'a', encoding='utf-8') as f:
 		f.write(mensaje + '\n')
 
-def logError(mensaje, archivo='./logs/errorDistritos.log'):
+def logError(mensaje, archivo='./apps/logs/errorDistritos.log'):
 	with open(archivo, 'a', encoding='utf-8') as f:
 		f.write(mensaje + '\n')
 
@@ -115,10 +115,11 @@ def procesarURL(ubigeo, gasto, ap, a, distrito, conexion, estado):
         browser.close()
 
 def main(arregloDistritos):
-    with open('./json/distritos.json', 'r') as archivo:
+    with open('./apps/json/distritosFinal.json', 'r') as archivo:
         datos = json.load(archivo)
 
-    anios = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+    #anios = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+    anios = [2025]
     enQueGasta = ['30=', '8=']
     actividadProyectos = ['', 'Proyecto', 'Actividad']
 
@@ -167,8 +168,8 @@ if __name__ == '__main__':
     distrito24=['240101', '240102', '240103', '240104', '240105', '240106', '240201', '240202', '240203', '240301', '240302', '240303', '240304']
     distrito25=['250101', '250102', '250103', '250104', '250105', '250106', '250107', '250201', '250202', '250203', '250204', '250301', '250302', '250303', '250304', '250305', '250306', '250307', '250401']
 
-    print(f'Iniciando {obtenerNombreVariable(distritos010203)} | {FechaHoraActual()}')
-    main(distritos010203)
+    print(f'Iniciando {obtenerNombreVariable(distrito06)} | {FechaHoraActual()}')
+    main(distrito06)
     #procesarURL('190101', '30=', '', '2018', '301501', conexion, True)
     #procesarURL('140309', '8=', '', '2017', '301246', conexion, True)
     #procesarURL('120205', '30=', '', '2023', '301035', conexion, True)

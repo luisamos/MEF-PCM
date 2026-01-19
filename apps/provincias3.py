@@ -30,7 +30,7 @@ def procesarURL(ubigeo, gasto, ap, a):
         logError(f"No se encontró la tabla para MEF('{ubigeo}', '{gasto}', '{ap}', '{a}') {url}")
         return {}
 
-    htmlTabla2 = htmlTabla.findAll('td')
+    htmlTabla2 = htmlTabla.find_all('td')
     if not htmlTabla2:
         logError(f"No se encontró la tabla(td) para MEF('{ubigeo}', '{gasto}', '{ap}', '{a}') {url}")
         return {}

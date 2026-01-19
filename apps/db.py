@@ -32,7 +32,7 @@ async def procesarProvincia(p):
         if not htmlTabla:
             return {}
 
-        htmlTabla2 = htmlTabla.findAll('td')
+        htmlTabla2 = htmlTabla.find_all('td')
         if not htmlTabla2:
             return {}
 
